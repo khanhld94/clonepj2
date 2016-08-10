@@ -1,0 +1,8 @@
+<p><%= t "user_mailer.send_result.title", name: @content[:name] %></p>
+<p><%= t "user_mailer.send_result.body" %></p>
+<p><%= t "user_mailer.send_result.id", id: @content[:id] %></p>
+<p><%= t "user_mailer.send_result.end", correct: @content[:correct],
+  total: @content[:total] %></p>
+<p>
+  <%= t "user_mailer.send_result.remembered", correct: @content[:correct] %>
+</p>

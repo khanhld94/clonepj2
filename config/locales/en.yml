@@ -110,3 +110,12 @@ en:
     index_category: "Index Category"
     index_word: "Index Word"
     new_word: "New Word"
+  user_mailer:
+    send_result:
+      subject: "Result Examination"
+      title: "Hi %{name},"
+      body: "This is email about your result of examination"
+      id: "Lesson number: Lesson %{id}"
+      remembered: "You remembered: %{correct}"
+      end: "You correct %{correct} answers in %{total} question."
+  mailer: "mailer"

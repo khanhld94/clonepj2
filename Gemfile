@@ -25,6 +25,8 @@ gem "carrierwave"
 gem "mini_magick"
 gem "cloudinary"
 gem "public_activity"
+gem "figaro"
+gem "sidekiq"
 
 group :development, :test do
   gem "byebug"
