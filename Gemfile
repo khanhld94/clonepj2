@@ -39,5 +39,5 @@ end
 group :development do
   gem "web-console", "~> 2.0"
   gem "spring"
-  gem "faker"
+  gem "faker", "1.4.2"
 end
