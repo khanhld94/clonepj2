@@ -25,6 +25,7 @@ gem "carrierwave"
 gem "mini_magick"
 gem "cloudinary"
 gem "public_activity"
+gem "faker"
 
 group :development, :test do
   gem "byebug"
@@ -39,5 +40,4 @@ end
 group :development do
   gem "web-console", "~> 2.0"
   gem "spring"
-  gem "faker", "1.4.2"
 end
