@@ -29,7 +29,6 @@ gem "public_activity"
 group :development, :test do
   gem "byebug"
   gem "sqlite3"
-  gem "faker"
 end
 
 group :production do
@@ -40,4 +39,5 @@ end
 group :development do
   gem "web-console", "~> 2.0"
   gem "spring"
+  gem "faker"
 end
