@@ -119,3 +119,4 @@ en:
       remembered: "You remembered: %{correct}"
       end: "You correct %{correct} answers in %{total} question."
   mailer: "mailer"
+  fels: "Fels 169 Framgia E Learning System"

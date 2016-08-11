@@ -27,11 +27,11 @@ gem "cloudinary"
 gem "public_activity"
 gem "figaro"
 gem "sidekiq"
+gem "faker"
 
 group :development, :test do
   gem "byebug"
   gem "sqlite3"
-  gem "faker"
 end
 
 group :production do
