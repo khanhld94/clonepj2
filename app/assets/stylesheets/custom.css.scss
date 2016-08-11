@@ -204,9 +204,12 @@ td {
 
 /* show user */
 .page-header {
-  height: 170px;
+  height: 200px;
   margin-top: 50px;
+  background-color: #ffdb4d;
+  border: solid #ffdb4d;
 }
+
 #info_fields {
   position: fixed !important;
   right: 100px;
@@ -364,8 +367,14 @@ body {
     margin-right: 0;
   }
 }
-/* footer */
 
+.avatar-wrap {
+}
+.inner {
+  margin-left: 250px;
+}
+
+/* footer */
 footer {
   margin-top: 45px;
   padding-top: 5px;

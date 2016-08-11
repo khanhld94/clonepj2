@@ -1,16 +1,19 @@
 <%= provide :title, @user.name %>
 <div class="page-header">
-  <section class="col-sm-4">
-    <%= cl_image_tag @user.avatar_url :thumbnail %>
-  </section>    
-  <section class="user_info col-sm-4">
-    <h1><%= @user.email %></h1>
-  </section>
-  <section class="stats col-sm-4">
-    <%= render "shared/stats" %>
-    <%= render "follow_form" %>
-  </section>
+  <div class="inner">
+    <div class="stats w3-quarter">
+    </div>
+    <div class="avatar-wrap w3-quarter">
+      <%= cl_image_tag @user.avatar_url, :width=>200, :crop=>"scale" %>
+    </div>
+    <div class="user-info w3-third">
+      <h2><%= @user.email %></h2>
+      <%= render "shared/stats" %>
+      <%= render "follow_form" %>
+    </div>
+  </div>
 </div>
 <div class="content">
+  <h2><%= t :recent_activities %></h2>
   <%= render_activities @activities %>
 </div>
