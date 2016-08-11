@@ -1,10 +1,11 @@
 <% if user_signed_in? %>
   <nav class="w3-sidenav w3-collapse w3-white"
     style="z-index:3;width:250px;" id="mySidenav"><br>
-    <div class="w3-container">
-      <img src="/assets/saitama.png" style="width:45%;" class="w3-round"><br><br>
+    <div class="w3-container text-center">
+      <%= cl_image_tag current_user.avatar_url, style: "width:100%" %>
       <h4 class="w3-padding-0"><b><%= current_user.name %></b></h4>
       <h4 class="w3-padding-0"><b><%= current_user.email %></b></h4>
     </div>
+    <%= render "shared/stats" %>
   </nav>
 <% end %>
