@@ -25,11 +25,11 @@ gem "carrierwave"
 gem "mini_magick"
 gem "cloudinary"
 gem "public_activity"
+gem "faker"
 
 group :development, :test do
   gem "byebug"
   gem "sqlite3"
-  gem "faker"
 end
 
 group :production do
