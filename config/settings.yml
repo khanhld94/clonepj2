@@ -9,3 +9,4 @@ condition_filters:
   - "learned"
   - "not_learned"
   - "all"
+default_email: "noreply@fels.com"
