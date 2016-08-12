@@ -28,7 +28,6 @@ gem "public_activity"
 gem "figaro"
 gem "sidekiq"
 gem "faker"
-gem "autoscaler"
 
 group :development, :test do
   gem "byebug"

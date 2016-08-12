@@ -17,7 +17,7 @@ class Lesson < ActiveRecord::Base
   accepts_nested_attributes_for :results
   
   before_create :random_words
-  after_update :send_mail_result
+  # after_update :send_mail_result
   
   def load_answer_correct
     Result.sum_correct_answer self.id
