@@ -30,7 +30,7 @@ class Lesson < ActiveRecord::Base
 
   private
   def random_words
-    self.words = category.words.not_learned(self.user_id)
+    self.words = category.words.random_not_learned_word(self.user_id)
       .order("RANDOM()").limit Settings.number_word
   end
   

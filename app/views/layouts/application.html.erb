@@ -14,10 +14,14 @@
     <div class="avatar-side">
       <%= render "layouts/flash" %>
       <%= render "layouts/side_profile" %>
-      <div class="w3-main" style="margin-left:300px">
-        <%= yield %>
-      </div>
-      <%= render "layouts/footer" %>
+      <% if user_signed_in? %>
+        <div class="w3-main" style="margin-left:300px">
+          <%= yield %>
+        </div>
+        <% else %>
+          <%= yield %>
+        <% end %>
+     <%= render "layouts/footer" %>
     </div>
   </body>
 </html>

@@ -1,10 +1,11 @@
 relation:
   followers: "followers"
   following: "following"
-per_page: 10
+per_page: 8
+recent_per_page: 5
 default_number_of_answers: 4
 number_word: 5
-time_lesson: 20
+time_lesson: 40
 condition_filters:
   - "learned"
   - "not_learned"

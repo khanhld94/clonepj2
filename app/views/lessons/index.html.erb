@@ -1,14 +1,35 @@
-<table>
-  <% @lessons.each do |lesson| %>
-    <tr>
-      <td><%= lesson.id %></td>
-      <td><%= link_to lesson.category.name, categories_path %></td>
-      <td><%= lesson.created_at %></td>
-      <td><%= lesson.status %></td>
-      <td>
-        <%= link_to t(:show), [lesson.category, lesson] %>
-      </td>
-    </tr>
-  <% end %>
-</table>  
-<%= paginate @lessons %>
+<div class="container content">
+  <h1><%= t "lesson.index" %></h1>
+  <nav class="navbar navbar-default search">
+    <%= search_form_for @search, url: user_lessons_path(current_user),
+      html: {class: "navbar-form", role: "form"} do |f| %>
+      <div class="lesson_search" align="center">
+        <%= f.select :category_id_eq,
+          options_from_collection_for_select(@categories, "id", "name",
+          @search.category_id_eq), {include_blank: t("searches.category")},
+          {class: "form-control"} %>
+        <label class="radio-inline" id="status_check">
+          <%= f.radio_button :status_eq, 0, checked: :status %><%= t :testing %>
+        </label>
+        <label class="radio-inline" id="status_check">
+          <%= f.radio_button :status_eq, 1, checked: :status %><%= t :finished %>
+        </label>
+        <%= f.submit t(:search), class: "btn btn-primary search_button" %>
+      </div>
+    <% end %>
+  </nav>
+  <table class="table table-bordered">
+    <thead class="thead-default">
+      <tr>
+        <th><%= sort_link @search, :created_at, t(:created_at) %></th>
+        <th><%= sort_link @search, :category_id, t("category.category") %></th>
+        <th><%= sort_link @search, :status, t(:status) %></th>
+        <th><%= t :word %></th>
+        <th><%= t :action %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render "shared/index_lesson", lessons: @lessons %>
+    </tbody>
+  </table>
+</div>

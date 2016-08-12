@@ -9,10 +9,13 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li>
-            <%= link_to t("categories.category"), categories_path %>
+            <%= link_to t("category"), categories_path %>
           </li>
           <li>
             <%= link_to t("word"), words_path %>
+          </li>
+          <li>
+            <%= link_to t("lesson"), user_lessons_path(current_user) %>
           </li>
           <li>
             <%= link_to t("users.index"), users_path %>

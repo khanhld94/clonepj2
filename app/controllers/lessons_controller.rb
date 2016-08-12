@@ -3,9 +3,11 @@ class LessonsController < ApplicationController
   before_action :load_results, :load_info_lesson, only: :show
   
   def index
-    @lessons = current_user.lessons
+    @categories = Category.includes :lessons
+    @lessons = @lessons.order(created_at: :desc)
     @search = @lessons.search params[:q]
-    @lessons = @search.result.page params[:page]
+    @lessons = @search.result.joins(:category)
+      .page(params[:page])
   end
 
   def create
