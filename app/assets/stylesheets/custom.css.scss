@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "social-share-button";
 
 .alert-notice {
   @include alert-variant($alert-success-bg,

@@ -5,7 +5,10 @@
       <%= cl_image_tag current_user.avatar_url, style: "width:100%" %>
       <h4 class="w3-padding-0"><b><%= current_user.name %></b></h4>
       <h4 class="w3-padding-0"><b><%= current_user.email %></b></h4>
+      <h4 class="w3-padding-0"><b> Learned :<%= Word.distinct_count(current_user).size %> Word</b></h4>
     </div>
     <%= render "shared/stats" %>
+    <%= social_share_button_tag(@current_user.name, 
+      :url => "https://fels169.herokuapp.com/") %>
   </nav>
 <% end %>

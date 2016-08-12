@@ -28,6 +28,7 @@ gem "public_activity"
 gem "figaro"
 gem "sidekiq"
 gem "faker"
+gem "social-share-button"
 
 group :development, :test do
   gem "byebug"

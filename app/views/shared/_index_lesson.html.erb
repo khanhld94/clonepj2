@@ -7,7 +7,8 @@
         <%= lesson.status %>
       </div>
     </td>
-    <td><%= lesson.results.size %></td>
+    <td><%= lesson.load_answer_correct %>/
+      <%= lesson.results.size %></td>
     <td>
       <% if lesson.finished? %>
         <%= link_to t(:show), [lesson.category, lesson], 

@@ -17,6 +17,9 @@ class Word < ActiveRecord::Base
   scope :not_learned, ->user_id{where "words.id NOT IN (SELECT word_id FROM 
     results WHERE lesson_id IN (SELECT id FROM lessons 
     WHERE user_id = ?))", user_id}
+  scope :distinct_count, ->user_id{where "words.id IN (SELECT DISTINCT word_id FROM 
+    results WHERE lesson_id IN (SELECT id FROM lessons 
+    WHERE user_id = ?))", user_id}
   scope :random_not_learned_word, ->user_id{where "words.id NOT IN (SELECT word_id FROM 
     results WHERE lesson_id IN (SELECT id FROM lessons 
     WHERE user_id = ?) GROUP BY word_id HAVING COUNT(word_id) >= 3)", user_id}

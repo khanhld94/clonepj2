@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap
+//= require social-share-button
 function timeOut() {
   $('#hidden_status').val('finished');
   $('.edit_lesson').submit();
