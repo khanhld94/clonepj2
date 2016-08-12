@@ -7,8 +7,11 @@
       <h4 class="w3-padding-0"><b><%= current_user.email %></b></h4>
       <h4 class="w3-padding-0"><b> Learned :<%= Word.distinct_count(current_user).size %> Word</b></h4>
     </div>
-    <%= render "shared/stats" %>
-    <%= social_share_button_tag(@current_user.name, 
+    <h4 class="label label-info" id="follow"><b><%= current_user.followers.size %></b></h4>
+    <%= t :follower %>
+    <h4 class="label label-info" id="follow"><b><%= current_user.following.size %></b></h4>
+    <%= t :following %>
+    <%= social_share_button_tag(@current_user.name, class: "social_share", 
       :url => "https://fels169.herokuapp.com/") %>
   </nav>
 <% end %>
