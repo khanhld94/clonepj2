@@ -13,6 +13,7 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def show
+    @word = Word.new
     @search = @category.words.search params[:q]
     @words = @search.result.includes(:word_answers)
       .page(params[:page]).per Settings.per_page
